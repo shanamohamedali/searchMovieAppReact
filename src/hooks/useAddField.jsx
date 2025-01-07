@@ -9,14 +9,11 @@ export const useAddField = (initialValue) => {
       [e.target.name]: e.target.value,
     }));
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setField("");
-  };
+ 
 
   return {
     field,
     handleChange,
-    handleSubmit,
+   
   };
 };

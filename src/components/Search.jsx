@@ -4,11 +4,6 @@ import { SearchContext } from "../context/SearchContext";
 
 export function Search() {
   const { searchInput, handleChange, clearSearch,fetchMovies } = useContext(SearchContext);
-// useEffect(()=>{
-//     if(searchInput===""){
-//         fetchMovies("movies")
-//     }
-// },[])
 
   return (
     <div className="flex justify-center items-center mx-auto md:w-[700px] px-3 py-2 relative ">
