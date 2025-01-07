@@ -10,8 +10,8 @@ export function Header() {
     document.body.classList.toggle("dark");
   };
 
-  const { token,logout } = useContext(AuthContext);
-  console.log("...token",token);
+  const { isAuthenticated,logout } = useContext(AuthContext);
+  
   return (
     <div>
       <header>
@@ -38,7 +38,7 @@ export function Header() {
                 />
               )}
             </button>
-            {token && (
+            {isAuthenticated && (
               <button className="flex items-center border border-white dark:border-primary-color px-3 py-2 gap-3 ml-1 mr-2 text-sm rounded-[20px] hover:bg-white dark:hover:bg-primary-color dark:hover:text-white hover:text-primary-color dark:text-primary-color"
               onClick={logout}>
                 Logout

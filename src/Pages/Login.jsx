@@ -1,12 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useAddField } from "../hooks/useAddField";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export function Login() {
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
+  const {getLocalData}=useLocalStorage("userData");
+  
+
   const { field, handleChange } = useAddField({
     username: "",
     password: "",
@@ -14,7 +19,19 @@ export function Login() {
   const [error, seterror] = useState({ username: "", password: "" });
   const [formError, setFormError] = useState("");
   console.log(field);
-  const { login } = useContext(AuthContext);
+
+  useEffect(()=>{
+    const user=getLocalData();
+    console.log("local...",user);
+    if(user){
+      navigate("/home");
+    }
+    else
+    {
+      navigate("/login");
+    }
+
+  },[])
 
   const validateUsername = () => {
     if (field.username === "") {
@@ -70,9 +87,8 @@ export function Login() {
     } catch (error) {
       console.log(error);
     }
-    setFormError("Required above fields");
   };
-  
+
   return (
     <div>
       <Header />
@@ -95,6 +111,7 @@ export function Login() {
               value={field.name}
               onChange={handleChange}
               onBlur={validateUsername}
+              required
             />
             {error.username && <p className="text-red-700">{error.username}</p>}
             <input
@@ -107,6 +124,7 @@ export function Login() {
               value={field.name}
               onChange={handleChange}
               onBlur={validatePassword}
+              required
             />
             {error.password && <p className="text-red-700">{error.password}</p>}
             <button

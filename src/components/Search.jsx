@@ -6,6 +6,7 @@ export function Search() {
   const { searchInput, handleChange, clearSearch,fetchMovies } = useContext(SearchContext);
 
   return (
+    <section>
     <div className="flex justify-center items-center mx-auto md:w-[700px] px-3 py-2 relative ">
       <button className="absolute left-1 pl-7 flex">
         {searchInput === "" ? (
@@ -23,11 +24,12 @@ export function Search() {
         name="search"
         id="search"
         value={searchInput}
-        className="bg-White rounded-[20px] w-full p-[8px] pl-14"
+        className="bg-White rounded-[20px] w-full p-[8px] pl-14 dark:border dark:border-font-color "
         placeholder="Search..."
         onChange={handleChange}
         autoComplete="off"
       />
     </div>
+   </section>
   );
 }

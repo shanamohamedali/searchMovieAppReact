@@ -47,6 +47,7 @@ export const SearchProvider = ({ children }) => {
 
   const clearSearch = () => {
     setSearchInput("");
+    cl
   };
   return (
     <SearchContext.Provider
