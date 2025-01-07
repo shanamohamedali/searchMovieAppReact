@@ -13,12 +13,12 @@ export const AuthProvider = ({ children }) => {
     setLocalData(userToken);
   };
   const logout = () => {
-    setToken("");
     clearLocalData("userData");
+    setToken("");
     
   };
   const isAuthenticated = !!token || !!(getLocalData());
-
+console.log("logout",getLocalData());
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout,token}}>
       {children}

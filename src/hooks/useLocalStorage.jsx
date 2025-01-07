@@ -10,7 +10,7 @@ const getLocalData=()=>{
     return savedData;
 }
 const clearLocalData=()=>{
-localStorage.removeItem(key);
+localStorage.clear(key);
 }
 
 return{
