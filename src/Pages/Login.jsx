@@ -9,8 +9,7 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 export function Login() {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
-  const {getLocalData}=useLocalStorage("userData");
-  
+  const { getLocalData } = useLocalStorage("userData");
 
   const { field, handleChange } = useAddField({
     username: "",
@@ -20,18 +19,11 @@ export function Login() {
   const [formError, setFormError] = useState("");
   console.log(field);
 
-  useEffect(()=>{
-    const user=getLocalData();
-    console.log("local...",user);
-    if(user){
-      navigate("/home");
-    }
-    else
-    {
-      navigate("/login");
-    }
-
-  },[])
+  useEffect(() => {
+    const user = getLocalData();
+    console.log("local...", user);
+    user ? navigate("/home") : navigate("/login");
+  }, []);
 
   const validateUsername = () => {
     if (field.username === "") {
@@ -90,8 +82,7 @@ export function Login() {
   };
 
   return (
-    <div>
-      <Header />
+    <>
       <div
         className="w-[450px] bg-primary-color p-3 mx-auto
      dark:bg-white dark:text-primary-color mt-[50px] flex justify-center items-center mb-[80px]"
@@ -146,7 +137,6 @@ export function Login() {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }

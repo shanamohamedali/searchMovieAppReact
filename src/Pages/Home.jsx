@@ -9,7 +9,7 @@ export function Home() {
   console.log("searchlist", searchList);
   return (
     <>
-      <Header />
+     
       <Search />
       <div className="flex justify-center items-center sm:px-[70px] sm:py-[25px] lg:px-[156px] lg:py-[52px]">
       <div className="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
@@ -26,7 +26,7 @@ export function Home() {
       </div>
         
       
-      <Footer />
+     
     </>
   );
 }
