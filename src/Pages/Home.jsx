@@ -12,11 +12,11 @@ export function Home() {
      
       <Search />
       <div className="flex justify-center items-center sm:px-[70px] sm:py-[25px] lg:px-[156px] lg:py-[52px]">
-      <div className="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
           {searchList.map((data) => (
-            <div key={data.id}  className="w-[180px] h-[240px]  my-14 object-contain">
+            <div key={data.id}  className="w-[180px] h-[240px]  my-14 object-cover">
               <img
-                src={`https://image.tmdb.org/t/p/w500/${data.backdrop_path}`}
+                src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
                 className="w-[160px] h-[240px]"
               />
               <p>{data.title}</p>

@@ -1,25 +1,30 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useNavigate } from "react-router-dom";
+
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState("");
   const { setLocalData, getLocalData, clearLocalData } =
-    useLocalStorage("userData");
+    useLocalStorage("userToken");
+  const [token, setToken] = useState(getLocalData());
+  const navigate=useNavigate();
+  
 
-  const login = (userToken) => {
-    setToken(userToken);
-    setLocalData(userToken);
+  const login = (Token) => {
+    setLocalData(Token);
+    setToken(getLocalData());
   };
 
   const logout = () => {
-    setToken("");
-    clearLocalData("userData");
+    clearLocalData("userToken");
+    setToken(getLocalData());
+    console.log("afterlogouttoken",token)
   };
 
-  const isAuthenticated = !!token || !!getLocalData();
-  console.log("logout", getLocalData());
+  const isAuthenticated = !!token;
+  console.log("tokenresAuth", isAuthenticated);
   
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout, token }}>
@@ -27,3 +32,8 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+
+export const useAuth=()=>{
+  return useContext(AuthContext);
+}

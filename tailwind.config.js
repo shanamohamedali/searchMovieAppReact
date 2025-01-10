@@ -11,6 +11,10 @@ export default {
         "primary-color":"var(--primary-color)",
        "secondary-color" :"var(--secondary-color)",
        "font-color":"var(--font-color)",
+       "error":"var(--error)",
+      },
+      screens:{
+        sm:"529px",
       }
     },
   },
