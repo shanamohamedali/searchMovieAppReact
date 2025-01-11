@@ -26,7 +26,7 @@ export function ForgetPassword() {
           id="username"
           value={field.username}
           onChange={handleChange}
-          onBlur=""
+          
         />
         <Input
           type="New password"
@@ -35,7 +35,7 @@ export function ForgetPassword() {
           id="Password"
           value={field.password}
           onChange={handleChange}
-          onBlur=""
+          
         />
         <Button label="Sign Up" type="Submit" />
       </form>

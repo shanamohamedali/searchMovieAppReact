@@ -1,14 +1,14 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
-
-const API_URL =
-  "https://api.themoviedb.org/3/search/movie?api_key=4b9b600168c9906a4a8fd028dbbadb7c&language=en-US&page=4&include_adult=false";
+import { API_URL } from "../constants/Constants";
+// import { useDebounce } from "../hooks/useDebounce";
 
 export const SearchContext = createContext();
 
 export const SearchProvider = ({ children }) => {
   const [searchInput, setSearchInput] = useState("");
   const [searchList, setSearchList] = useState([]);
+  // useDebounce(searchInput ? fetchMovies(searchInput) : fetchMovies("movies"));
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -24,7 +24,7 @@ export const SearchProvider = ({ children }) => {
       clearTimeout(timeout);
     };
   }, [searchInput]);
-  
+
   console.log("searchInput", searchInput);
 
   const fetchMovies = async (query) => {
@@ -48,11 +48,17 @@ export const SearchProvider = ({ children }) => {
 
   const clearSearch = () => {
     setSearchInput("");
-    cl
   };
+
   return (
     <SearchContext.Provider
-      value={{ searchInput, searchList, handleChange, clearSearch,fetchMovies }}
+      value={{
+        searchInput,
+        searchList,
+        handleChange,
+        clearSearch,
+        fetchMovies,
+      }}
     >
       {children}
     </SearchContext.Provider>

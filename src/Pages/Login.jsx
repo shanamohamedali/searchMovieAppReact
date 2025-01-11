@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useAddField } from "../hooks/useAddField";
 import {useAuth } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { replace, useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { FormLayout } from "../layouts/FormLayout";
 import {Input} from "../components/Input"
@@ -22,9 +22,9 @@ export function Login() {
   const [formError, setFormError] = useState("");
   console.log(field);
 
-  useEffect(() => {
-   isAuthenticated? navigate("/home") : navigate("/login");
-  }, []);
+  // useEffect(() => {
+  //  isAuthenticated? navigate("/home") : navigate("/login");
+  // }, []);
 
   const validateUsername = () => {
     if (field.username === "") {
@@ -78,7 +78,7 @@ export function Login() {
         ) {
           console.log("login Successfull");
           login("dummyToken")
-            navigate("/home");
+            navigate("/home",{replace:true});
           setFormError("");
         }
         setFormError("Enter username=test@gmail.com and password=testpass");

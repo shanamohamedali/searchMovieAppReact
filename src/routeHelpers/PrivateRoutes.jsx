@@ -7,4 +7,10 @@ export const PrivateRoutes = () => {
   return isAuthenticated ? <Outlet/> : <Navigate to="/login" />;
 };
 
+export const ProtectedRouteAfterLogin=()=>{
+  const {isAuthenticated}=useAuth();
+  return !isAuthenticated?<Outlet/>:<Navigate to="/home"/>;
+  };
+
+
 
