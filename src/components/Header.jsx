@@ -24,7 +24,7 @@ export function Header() {
           </div>
           <div className="flex w-100 items-center">
             <button
-              className="flex items-center  px-3 py-2 gap-3 ml-1 mr-2 text-sm rounded-[20px] hover:bg-white hover:text-primary-color dark:hover:bg-primary-color dark:border-primary-color"
+              className="flex items-center  px-3 py-1 gap-3 ml-1 mr-2 text-sm rounded-full hover:bg-white hover:text-primary-color dark:hover:bg-primary-color"
               onClick={() => darkModeHandler()}
             >
               {!dark && (
