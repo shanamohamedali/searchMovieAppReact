@@ -31,9 +31,9 @@
 - **Install Dependencies**
 - Run `npm install` to install the app's dependencies.
 
-- Start the App
+-**Start the App**
 - Run `npm run dev` to start the app
--                   
+                  
   
   
 
