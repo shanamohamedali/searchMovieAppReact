@@ -10,16 +10,16 @@ import { IoMdArrowDropdown,IoIosGlobe } from "react-icons/io";
 export function Footer() {
   return (
     <footer className=" bottom-0 left-0 right-0 w-screen py-4 bg-primary-color flex md:flex-col
-     justify-center align-bottom dark:bg-white dark:bg-opacity-80 dark:text-primary-color 
+      align-bottom dark:bg-white dark:bg-opacity-80 dark:text-primary-color 
      text-font-color text-[13px] font-[400] mt-auto">
 
-      <div className="mx-auto w-[700px]">
-        <div className="px-7 py-1">
+      <div className="mx-auto w-[700px] ">
+        <div className="px-7 md:py-4">
           <p>Question? Call 1 234 134 2343</p>
         </div>
 
         <div className="md:flex">
-          <div className="px-7 py-4">
+          <div className="px-7 md:py-4">
             <ul>
               {/* <li>Question? Call 1 234 134 2343</li> */}
               <li> FAQ</li>
@@ -27,19 +27,19 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="px-7 py-4">
+          <div className="px-7 md:py-4">
             <ul>
               <li> Help Center</li>
               <li> Corporate Information</li>
             </ul>
           </div>
-          <div className="px-7 py-4">
+          <div className="px-7 md:py-4">
             <ul>
               <li> Terms of Use</li>
               <li> Privacy</li>
             </ul>
           </div>
-          <div className="flex gap-3 px-7 py-7">
+          <div className="flex gap-3 px-7 py-7 sm:justify-center">
             <a>
               <FaInstagramSquare size={24} />
             </a>

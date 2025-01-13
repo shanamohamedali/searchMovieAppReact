@@ -16,7 +16,7 @@ export const FormLayout = ({
   console.log("signup link", linkUserReg);
   return (
     <div
-      className="w-[450px] bg-primary-color p-3 mx-auto
+      className="sm:w-[450px] bg-primary-color p-3 mx-auto
      dark:bg-white dark:text-primary-color mt-[50px] flex justify-center items-center mb-[80px]"
     >
       <div className="mx-10 mt-2 p-3 w-full">

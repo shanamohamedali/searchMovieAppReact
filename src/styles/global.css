@@ -14,14 +14,15 @@
     font-weight: 400;
     color-scheme: light dark;
     display: flex;
-    direction: column;
-    justify-content:space-between;
+    justify-content: center;
+    /* direction: column;
+    justify-content:space-between; */
     
 }
 
 body{
     
-    background-image:var(--primary-bgimage);
+    background:var(--primary-bgimage);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
