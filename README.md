@@ -33,8 +33,8 @@
 
 -**Start the App**
 - Run `npm run dev` to start the app
-
-  ##Live Link
+  
+- ##Live Link
   [Site Link](https://filmcraze.netlify.app/)
                   
   
