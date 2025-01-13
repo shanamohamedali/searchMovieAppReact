@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { FormLayout } from "../layouts/FormLayout";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { useAddField } from "../hooks/useAddField";
+import { useNavigate } from "react-router-dom";
 
 export function SignUp() {
   const { field, handleChange } = useAddField({
@@ -11,6 +12,7 @@ export function SignUp() {
     password: "",
   });
 
+  const navigate=useNavigate();
   const [error, seterror] = useState({
     firstname: "",
     username: "",
@@ -73,16 +75,20 @@ export function SignUp() {
     }));
     return true;
   };
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    if(validateFirstname&&validateUsername&&validatePassword)
+      navigate("/login");
+  }
   return (
     <FormLayout
       label="Sign Up"
-      linkForgotPassword=""
-      labelForgotPassword=""
       Question="Already have an Account?"
-      linkUserReg="\login"
+      linkUserReg="/login"
       labeluserReg="Sign In"
     >
-      <form onSubmit="">
+      <form onSubmit={handleSubmit}>
         <Input
           type="text"
           placeholder="FirstName"
@@ -107,8 +113,8 @@ export function SignUp() {
         <Input
           type="password"
           placeholder="Password"
-          name="Password"
-          id="Password"
+          name="password"
+          id="password"
           value={field.password}
           onChange={handleChange}
           onBlur={validatePassword}

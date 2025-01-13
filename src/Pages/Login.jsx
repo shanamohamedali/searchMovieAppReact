@@ -91,10 +91,10 @@ export function Login() {
   return (
     <>
       <FormLayout label="Sign In"
-      linkForgotPassword="forget-password"
+      linkForgotPassword="/forget-password"
       labelForgotPassword="Forgot Password?"
       Question="New to ReelMagic?"
-      linkUserReg="signup"
+      linkUserReg="/signup"
       labeluserReg="Sign Up"
       >
         <form onSubmit={handleSubmit}>

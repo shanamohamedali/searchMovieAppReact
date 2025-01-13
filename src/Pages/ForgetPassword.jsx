@@ -12,11 +12,11 @@ export function ForgetPassword() {
   return (
     <FormLayout
       label="Forget Password"
-      linkForgotPassword="\login"
+      linkForgotPassword="/login"
       labelForgotPassword="Back to logIn"
       Question="New to ReelMagic?"
-      linkUserReg="\signup"
-      labeluerReg="SignUp"
+      linkUserReg="/signup"
+      labeluserReg="Sign Up"
     >
       <form onSubmit="">
         <Input

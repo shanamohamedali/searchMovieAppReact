@@ -27,7 +27,7 @@ export const FormLayout = ({
         <main>{children}</main>
 
         <div className="flex justify-end p-2 cursor-pointer">
-          <span onClick={()=>navigate(`${linkUserReg}`)}>{labelForgotPassword}</span>
+          <span onClick={()=>navigate(`${linkForgotPassword}`)}>{labelForgotPassword}</span>
           {/* <Link to={linkForgotPassword}>{labelForgotPassword}</Link> */}
         </div>
         <div className="flex justify-center items-baseline mt-12 cursor-pointer">
