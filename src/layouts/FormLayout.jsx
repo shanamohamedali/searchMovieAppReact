@@ -27,12 +27,12 @@ export const FormLayout = ({
         <main>{children}</main>
 
         <div className="flex justify-end p-2 cursor-pointer">
-          <span onClick={()=>navigate(linkForgotPassword)}>{labelForgotPassword}</span>
+          <span onClick={()=>navigate(`${linkUserReg}`)}>{labelForgotPassword}</span>
           {/* <Link to={linkForgotPassword}>{labelForgotPassword}</Link> */}
         </div>
         <div className="flex justify-center items-baseline mt-12 cursor-pointer">
           <p>{Question}</p>
-          <span onClick={()=>navigate(linkUserReg)} className="text-white dark:text-primary-color ml-2">{labeluserReg}
+          <span onClick={()=>navigate(`${linkUserReg}`)} className="text-white dark:text-primary-color ml-2">{labeluserReg}
           </span>
            {/* <Link to={linkUserReg}> {labeluserReg}</Link> */}
         </div>
