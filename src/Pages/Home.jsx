@@ -11,7 +11,7 @@ export function Home() {
     <>
      
       <Search />
-      <div className="flex justify-center items-center sm:px-[70px] sm:py-[25px] lg:px-[156px] lg:py-[52px]">
+      <div className="flex justify-center items-center sm:px-[20px] sm:py-[25px] lg:px-[156px] lg:py-[52px]">
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
           {searchList.map((data) => (
             <div key={data.id}  className="w-[180px] h-[240px]  my-14 object-cover">

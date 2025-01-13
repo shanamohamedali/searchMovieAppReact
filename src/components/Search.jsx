@@ -24,7 +24,7 @@ export function Search() {
         name="search"
         id="search"
         value={searchInput}
-        className="bg-White rounded-[20px] w-full p-[8px] pl-14 dark:border dark:border-font-color "
+        className="bg-white rounded-[20px] w-full p-[8px] pl-14 dark:border dark:border-font-color "
         placeholder="Search..."
         onChange={handleChange}
         autoComplete="off"
